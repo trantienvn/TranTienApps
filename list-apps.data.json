@@ -1,26 +1,10 @@
 [
   {
-    "id": "flappybird",
-    "name": "Flappy Bird",
+    "id": "flappy",
+    "name": "Flappy",
     "description": "Trò chơi đơn giản với độ khó cao!",
-    "apkUrl": "https://yourdomain.com/apk/flappybird.apk",
-    "sizeMb": 4.2,
+    "apkUrl": "https://github.com/trantienvn/trantienvn.github.io/releases/download/New/Flappy.apk",
+    "sizeMb": 41,
     "versionCode": 2
-  },
-  {
-    "id": "spaceinvader",
-    "name": "Space Invader",
-    "description": "Bắn quái ngoài không gian cổ điển",
-    "apkUrl": "https://yourdomain.com/apk/spaceinvader.apk",
-    "sizeMb": 9.7,
-    "versionCode": 1
-  },
-  {
-    "id": "2048classic",
-    "name": "2048 Classic",
-    "description": "Trò chơi xếp số nổi tiếng 2048",
-    "apkUrl": "https://yourdomain.com/apk/2048classic.apk",
-    "sizeMb": 2.8,
-    "versionCode": 3
   }
 ]
