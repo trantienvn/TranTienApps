@@ -10,9 +10,9 @@
   {
     "id": "trantien.game.hub",
     "name": "GameHub mới",
-    "description": "Cập nhật GameHub bản mới, sửa đổi 1 số thứ, tải game mượt hơn:)",
+    "description": "Cập nhật GameHub bản mới, sửa đổi 1 số thứ, tải game mượt hơn:)\n Ngày: 29/06/2025",
     "apkUrl": "https://github.com/trantienvn/TranTienApps/releases/download/alpha-test/app-release.apk",
     "sizeMb": 11,
-    "versionCode": 2
+    "versionCode": 3
   }
 ]
