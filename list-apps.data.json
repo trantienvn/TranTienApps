@@ -3,15 +3,15 @@
     "id": "com.trantien.Flappy",
     "name": "Flappy Chicken",
     "description": "Trò chơi đơn giản với độ khó cao!, vá một số lỗi, vá luôn lỗ hổng không thời gian: thêm tiền xu và các thứ.\nNgày: 29/06/2025",
-    "apkUrl": "https://github.com/trantienvn/TranTienApps/releases/download/alpha-test/Flappy.apk",
-    "sizeMb": 90.04,
+    "apkUrl": "https://github.com/trantienvn/TranTienApps/raw/refs/heads/main/Flappy/v1.0.3.apk",
+    "sizeMb": 90.5,
     "versionCode": 3
   },
   {
     "id": "trantien.game.hub",
     "name": "TranTien GameHub mới",
-    "description": "Cập nhật GameHub bản mới, nay là TranTien Hub, sửa đổi 1 số thứ, tải game mượt hơn:)\nNgày: 29/06/2025",
-    "apkUrl": "https://github.com/trantienvn/TranTienApps/releases/download/alpha-test/app-release.apk",
+    "description": "Cập nhật GameHub bản mới, nay là TranTien Hub, sửa đổi 1 số thứ, tải game mượt hơn:)\nNgày: 30/06/2025",
+    "apkUrl": "https://github.com/trantienvn/TranTienApps/raw/refs/heads/main/Hub/v1.0.5.apk",
     "sizeMb": 11,
     "versionCode": 4
   }
