@@ -14,5 +14,13 @@
     "apkUrl": "https://github.com/trantienvn/TranTienApps/raw/refs/heads/main/Hub/v1.0.5.apk",
     "sizeMb": 11,
     "versionCode": 5
+  },
+  {
+    "id": "cơm.locket.Locket",
+    "name": "Locket Widget",
+    "description": "Cập nhật Locket gold cho mấy đứa sai android:))\nNgày: 30/06/2025",
+    "apkUrl": "https://github.com/trantienvn/TranTienApps/releases/download/alpha-test/Locket_v1.201.3.apk",
+    "sizeMb": 147.16,
+    "versionCode": 411
   }
 ]
