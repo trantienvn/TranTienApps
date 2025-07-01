@@ -10,7 +10,7 @@
   {
     "id": "trantien.game.hub",
     "name": "TranTien Hub mới",
-    "description": "Cập nhật TranTien Hub bản mới, sửa đổi 1 số thứ, tải game mượt hơn:)\nNgày: 31/06/2025",
+    "description": "Cập nhật TranTien Hub bản mới, sửa đổi 1 số thứ: thêm trang web xịn https://hub.trantien.id.vn, tải game mượt hơn:)\nNgày: 31/06/2025",
     "apkUrl": "https://github.com/trantienvn/TranTienApps/raw/refs/heads/main/Hub/v1.0.6.apk",
     "sizeMb": 10.65,
     "versionCode": 6
