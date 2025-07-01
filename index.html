@@ -4,11 +4,33 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>TranTienHub - Mini App Store</title>
-    <link rel="icon" href="trantien.game.hub.png" type="image/png" />
-    <meta name="description" content="TranTienHub - Mini App Store cho các ứng dụng Android của TranTien. Tải xuống các ứng dụng yêu thích của bạn một cách dễ dàng và nhanh chóng." />
+    <link rel="icon" href="https://hub.trantien.id.vn/trantien.game.hub.png" type="image/png" />
+
+    <!-- Thông tin mô tả -->
+    <meta name="description"
+        content="TranTienHub - Mini App Store cho các ứng dụng Android của TranTien. Tải xuống các ứng dụng yêu thích của bạn một cách dễ dàng và nhanh chóng." />
     <meta name="keywords" content="TranTienHub, Mini App Store, Android Apps, Tải ứng dụng, TranTien Apps" />
     <meta name="author" content="TranTien" />
+
+    <!-- Open Graph (Facebook, Zalo, LinkedIn...) -->
+    <meta property="og:title" content="TranTienHub - Mini App Store" />
+    <meta property="og:description" content="Tải xuống các ứng dụng Android của TranTien dễ dàng và nhanh chóng." />
+    <meta property="og:image" content="https://hub.trantien.id.vn/trantien.game.hub.png" />
+    <meta property="og:url" content="https://hub.trantien.id.vn" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TranTienHub - Mini App Store" />
+    <meta name="twitter:description" content="Tải ứng dụng Android miễn phí từ TranTien." />
+    <meta name="twitter:image" content="https://hub.trantien.id.vn/trantien.game.hub.png" />
+
+    <!-- Bảo mật & hiển thị -->
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta name="theme-color" content="#1e88e5" />
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
@@ -19,11 +41,36 @@
 
         header {
             background-color: #1e88e5;
-            color: white;
+            color: rgb(255, 255, 255);
             padding: 16px;
             text-align: center;
             font-size: 24px;
             font-weight: bold;
+        }
+
+        #headertext {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        #headerdesc {
+            font-size: 16px;
+            /* color: #e7e7e7; */
+            margin-top: 4px;
+            font-weight: lighter;
+        }
+        #flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+        #logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            /* background: #eee; */
         }
 
         .container {
@@ -74,11 +121,12 @@
         }
 
         button {
+            margin-top: 8px;
             background-color: #2196f3;
             border: none;
             color: white;
             padding: 10px 16px;
-            border-radius: 8px;
+            border-radius: 14px;
             cursor: pointer;
             font-size: 14px;
         }
@@ -100,21 +148,27 @@
         let fallbackHubApk = "https://github.com/trantienvn/TranTienApps/raw/refs/heads/main/Hub/v1.0.6.apk";
 
         function openApp(appId) {
-            const now = Date.now();
             const scheme = `trantienhub://open?id=${appId}`;
-
             const iframe = document.createElement("iframe");
             iframe.style.display = "none";
             iframe.src = scheme;
             document.body.appendChild(iframe);
+            let hidden = false;
+            const onVisibilityChange = () => {
+                if (document.hidden) {
+                    hidden = true; // Người dùng đã rời khỏi trình duyệt (có thể app được mở)
+                }
+            };
+            document.addEventListener("visibilitychange", onVisibilityChange);
 
             setTimeout(() => {
-                // Nếu app chưa mở → chuyển sang tải TranTienHub APK
-                if (Date.now() - now < 1800) {
-                    window.location.href = fallbackHubApk;
+                document.removeEventListener("visibilitychange", onVisibilityChange);
+                if (!hidden) {
+                    window.location.href = fallbackHubApk; // Chỉ tải nếu không bị mất focus
                 }
             }, 1500);
         }
+
 
         async function loadApps() {
             const container = document.getElementById("app-list");
@@ -168,7 +222,13 @@
 </head>
 
 <body>
-    <header>TranTienHub - Mini App Store</header>
+    <header>
+        <div id="flex">
+            <img src="./trantien.game.hub.png" alt="" id="logo">
+            <div id="headertext">TranTienHub - Mini App Store</div>
+        </div>
+        <p id="headerdesc">Tải xuống các ứng dụng Android của TranTien một cách dễ dàng và nhanh chóng.</p>
+    </header>
     <div class="container" id="app-list">
         <!-- Danh sách game sẽ được tạo từ JSON -->
     </div>
