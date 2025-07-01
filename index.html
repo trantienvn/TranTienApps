@@ -59,12 +59,14 @@
             margin-top: 4px;
             font-weight: lighter;
         }
+
         #flex {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 16px;
         }
+
         #logo {
             width: 48px;
             height: 48px;
@@ -96,7 +98,7 @@
             height: 72px;
             border-radius: 12px;
             object-fit: cover;
-            background: #eee;
+            /* background: #eee; */
         }
 
         .card-content {
@@ -182,7 +184,8 @@
                     card.className = "card";
 
                     const image = document.createElement("img");
-                    image.src = `https://github.com/trantienvn/TranTienApps/raw/refs/heads/main/${app.id}.png`;
+                    let src = `https://github.com/trantienvn/TranTienApps/raw/refs/heads/main/${app.id}.png`;
+                    image.src = src;
                     image.onerror = () => image.style.display = "none";
 
                     const content = document.createElement("div");
