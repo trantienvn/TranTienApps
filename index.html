@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TranTienHub - Mini App Store</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1e88e5;
+            color: white;
+            padding: 16px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 16px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            margin-bottom: 16px;
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .card img {
+            width: 72px;
+            height: 72px;
+            border-radius: 12px;
+            object-fit: cover;
+            background: #eee;
+        }
+
+        .card-content {
+            flex: 1;
+        }
+
+        .card h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .card p {
+            margin: 4px 0;
+            font-size: 14px;
+            color: #555;
+            white-space: pre-line;
+        }
+
+        .card .size {
+            font-size: 12px;
+            color: #777;
+        }
+
+        button {
+            background-color: #2196f3;
+            border: none;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #1976d2;
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+            margin-top: 32px;
+        }
+    </style>
+    <script>
+        // ⚠️ Chỉ sửa phần này thôi, phần HTML và CSS giữ nguyên như ở trên
+
+        // ⚠️ Đây là link APK của app chính TranTienHub
+        let fallbackHubApk = "https://github.com/trantienvn/TranTienApps/raw/refs/heads/main/Hub/v1.0.5.apk";
+
+        function openApp(appId) {
+            const now = Date.now();
+            const scheme = `trantienhub://open?id=${appId}`;
+
+            const iframe = document.createElement("iframe");
+            iframe.style.display = "none";
+            iframe.src = scheme;
+            document.body.appendChild(iframe);
+
+            setTimeout(() => {
+                // Nếu app chưa mở → chuyển sang tải TranTienHub APK
+                if (Date.now() - now < 1800) {
+                    window.location.href = fallbackHubApk;
+                }
+            }, 1500);
+        }
+
+        async function loadApps() {
+            const container = document.getElementById("app-list");
+            try {
+                const res = await fetch("https://raw.githubusercontent.com/trantienvn/TranTienApps/refs/heads/main/update.json");
+                if (!res.ok) throw new Error("Không thể tải danh sách game.");
+                const apps = await res.json();
+                fallbackHubApk = apps.find(app => app.id === "trantien.game.hub")?.apkUrl || fallbackHubApk;
+                apps.forEach(app => {
+                    const card = document.createElement("div");
+                    card.className = "card";
+
+                    const image = document.createElement("img");
+                    image.src = `https://github.com/trantienvn/TranTienApps/raw/refs/heads/main/${app.id}.png`;
+                    image.onerror = () => image.style.display = "none";
+
+                    const content = document.createElement("div");
+                    content.className = "card-content";
+
+                    const title = document.createElement("h2");
+                    title.textContent = app.name;
+
+                    const desc = document.createElement("p");
+                    desc.textContent = app.description;
+
+                    const size = document.createElement("div");
+                    size.className = "size";
+                    size.textContent = `Dung lượng: ${app.sizeMb} MB`;
+
+                    const button = document.createElement("button");
+                    button.textContent = "Tải xuống!";
+                    button.onclick = () => openApp(app.id);
+
+                    content.appendChild(title);
+                    content.appendChild(desc);
+                    content.appendChild(size);
+                    content.appendChild(button);
+
+                    card.appendChild(image);
+                    card.appendChild(content);
+                    container.appendChild(card);
+                });
+            } catch (e) {
+                container.innerHTML = `<div class="error">⚠️ ${e.message}</div>`;
+            }
+        }
+
+        window.onload = loadApps;
+    </script>
+
+</head>
+
+<body>
+    <header>TranTienHub - Mini App Store</header>
+    <div class="container" id="app-list">
+        <!-- Danh sách game sẽ được tạo từ JSON -->
+    </div>
+</body>
+
+</html>
