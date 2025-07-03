@@ -8,19 +8,19 @@
     "versionCode": 3
   },
   {
-    "id": "trantien.game.hub",
-    "name": "TranTien Hub mới",
-    "description": "Cập nhật TranTien Hub bản mới, sửa đổi 1 số thứ: thêm trang web xịn https://hub.trantien.id.vn, tải game mượt hơn:)\nNgày: 31/06/2025",
-    "apkUrl": "https://github.com/trantienvn/TranTienApps/raw/refs/heads/main/Hub/v1.0.6.apk",
-    "sizeMb": 10.65,
-    "versionCode": 6
-  },
-  {
     "id": "com.locket.Locket",
     "name": "Locket Widget",
     "description": "Cập nhật Locket gold cho mấy đứa sài android:))\nPhiên bản: v1.201.3\nNgày: 30/06/2025",
     "apkUrl": "https://github.com/trantienvn/TranTienApps/releases/download/alpha-test/Locket_v1.201.3.apk",
     "sizeMb": 147.16,
     "versionCode": 411
+  },
+  {
+    "id": "trantien.game.hub",
+    "name": "TranTien Hub mới",
+    "description": "Cập nhật TranTien Hub bản mới, sửa đổi 1 số thứ: Cập nhật giao diện theo hệ thống, tải game mượt hơn:)\nNgày: 03/07/2025",
+    "apkUrl": "https://github.com/trantienvn/TranTienApps/raw/refs/heads/main/Hub/v1.0.7.apk",
+    "sizeMb": 10.60,
+    "versionCode": 7
   }
 ]
