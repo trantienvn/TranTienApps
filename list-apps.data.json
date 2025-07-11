@@ -8,6 +8,14 @@
     "versionCode": 3
   },
   {
+    "id": "com.trantien.blockblast",
+    "name": "Block Blast",
+    "description": "Trò chơi xếp hình phá gạch\nNgày: 11/07/2025",
+    "apkUrl": "https://github.com/trantienvn/TranTienApps/raw/refs/heads/main/BlockBlast/v1.0.apk",
+    "sizeMb": 34.1,
+    "versionCode": 3
+  },
+  {
     "id": "com.locket.Locket",
     "name": "Locket Widget",
     "description": "Cập nhật Locket gold cho mấy đứa sài android:))\nPhiên bản: v1.201.3\nNgày: 30/06/2025",
