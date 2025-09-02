@@ -18,10 +18,10 @@
   {
     "id": "com.trantien.lichhocapp",
     "name": "Lịch Học",
-    "description": "Ứng dụng xem lịch học tại ICTU cho sinh viên\nPhiên bản: v0.1.2\nNgày: 30/7/2025",
-    "apkUrl": "https://github.com/trantienvn/lichhocapp/releases/download/v0.1.2/app-release.apk",
-    "sizeMb": 21,
-    "versionCode": 2
+    "description": "Ứng dụng xem lịch học tại ICTU cho sinh viên\nCập nhật giao diện mới (liquid glass)\nPhiên bản: v0.1.3\nNgày: 2/9/2025",
+    "apkUrl": "https://github.com/trantienvn/lichhocapp/releases/download/v0.1.3/app-release.apk",
+    "sizeMb": 24,
+    "versionCode": 3
   },
   {
     "id": "com.locket.Locket",
